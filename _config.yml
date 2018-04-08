@@ -4,10 +4,10 @@
 # ---------------------------------------------------------------
 
 # Site
-title: NexT
+title: Maschines Tell Elegant Lies
 subtitle:
-description:
-author: John Doe
+description: nybble
+author: İsmet GÜZELGÜN
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: en
 date_format: '%Y-%m-%d'
@@ -212,8 +212,10 @@ font:
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
-#social:
-  #LinkLabel: Link
+social:
+  GitHub: https://github.com/ismetguzelgun
+  Twitter: https://twitter.com/ismetguzelgun
+  LinkedIn: https://tr.linkedin.com/in/ismetguzelgun
 
 
 # Social Links Icons
@@ -227,6 +229,8 @@ social_icons:
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
   Twitter: twitter
+  #github
+  LinkedIn: linkedin
   Weibo: weibo
 
 
