@@ -4,22 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="İsmet Güzelgün — software engineer building enterprise systems, developer tools, and thoughtful products." />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="theme-color" content="#ffffff" />
   <title>İsmet Güzelgün</title>
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-soft: #11182d;
-      --panel: #131c33;
-      --panel-2: #182340;
-      --text: #e5e7eb;
-      --muted: #a7b0c0;
-      --accent: #7c8cff;
-      --accent-2: #5eead4;
-      --border: rgba(255, 255, 255, 0.08);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-      --radius: 20px;
-      --max: 1100px;
+      --bg: #f5f5f4;
+      --surface: #ffffff;
+      --surface-2: #f0f0ee;
+      --text: #111111;
+      --muted: #5f5f5a;
+      --line: #ddddda;
+      --accent: #111111;
+      --max: 1080px;
+      --radius: 0px;
     }
 
     * { box-sizing: border-box; }
@@ -28,14 +25,10 @@
 
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(124, 140, 255, 0.18), transparent 32%),
-        radial-gradient(circle at top right, rgba(94, 234, 212, 0.10), transparent 20%),
-        linear-gradient(180deg, #0b1020 0%, #0d1326 100%);
-      min-height: 100vh;
-      line-height: 1.6;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
     }
 
     a {
@@ -49,26 +42,22 @@
     }
 
     .nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(16px);
-      background: rgba(11, 16, 32, 0.72);
-      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav-inner {
+      min-height: 68px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 72px;
       gap: 16px;
     }
 
     .brand {
+      font-size: 1rem;
       font-weight: 700;
-      letter-spacing: 0.02em;
-      font-size: 1.05rem;
+      letter-spacing: -0.02em;
     }
 
     .nav-links {
@@ -79,7 +68,6 @@
 
     .nav-links a {
       color: var(--muted);
-      transition: color 0.18s ease;
     }
 
     .nav-links a:hover,
@@ -88,54 +76,52 @@
     }
 
     .hero {
-      padding: 84px 0 40px;
+      padding: 56px 0 32px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.4fr 0.9fr;
-      gap: 28px;
-      align-items: stretch;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 0;
+      border: 1px solid var(--line);
+      background: var(--surface);
     }
 
-    .panel {
-      background: linear-gradient(180deg, rgba(24, 35, 64, 0.92), rgba(19, 28, 51, 0.96));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    .hero-main,
+    .hero-side {
+      padding: 32px;
     }
 
-    .hero-copy {
-      padding: 36px;
+    .hero-side {
+      border-left: 1px solid var(--line);
+      background: var(--surface-2);
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(124, 140, 255, 0.12);
-      color: #c7d2fe;
-      font-size: 0.92rem;
-      margin-bottom: 18px;
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.2rem, 5vw, 4.7rem);
-      line-height: 1.02;
-      letter-spacing: -0.04em;
+      font-size: clamp(2.3rem, 6vw, 5rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      max-width: 9ch;
     }
 
-    .hero-copy p {
-      margin: 18px 0 0;
-      max-width: 62ch;
+    .lead {
+      margin: 20px 0 0;
+      max-width: 60ch;
       color: var(--muted);
-      font-size: 1.05rem;
+      font-size: 1rem;
     }
 
-    .hero-actions {
+    .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
@@ -146,191 +132,142 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      min-height: 46px;
-      padding: 0 18px;
-      border-radius: 12px;
+      min-height: 44px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      background: var(--surface);
       font-weight: 600;
-      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
-      border: 1px solid transparent;
+      transition: background 0.15s ease, color 0.15s ease;
     }
 
     .button:hover,
     .button:focus-visible {
-      transform: translateY(-1px);
+      background: #111111;
+      color: #ffffff;
+      border-color: #111111;
     }
 
-    .button-primary {
-      background: linear-gradient(135deg, var(--accent), #9f7aea);
-      color: white;
-    }
-
-    .button-secondary {
-      background: rgba(255, 255, 255, 0.03);
-      border-color: var(--border);
+    .quote {
+      margin: 0 0 24px;
+      font-size: 1rem;
       color: var(--text);
     }
 
-    .terminal-card {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 100%;
-    }
-
-    .terminal-window {
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: #09111f;
-    }
-
-    .terminal-top {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 14px;
-      background: #0f172a;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: #334155;
-    }
-
-    .dot:nth-child(1) { background: #f87171; }
-    .dot:nth-child(2) { background: #fbbf24; }
-    .dot:nth-child(3) { background: #34d399; }
-
-    .terminal-body {
-      padding: 18px;
+    .mono {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      font-size: 0.96rem;
-      color: #cbd5e1;
-      min-height: 260px;
+      font-size: 0.95rem;
     }
 
-    .line { margin: 0 0 10px; }
-    .prompt { color: var(--accent-2); }
-    .cmd { color: #e2e8f0; }
-    .comment { color: #94a3b8; }
-    .highlight { color: #c7d2fe; }
-
-    .section {
-      padding: 22px 0;
+    .meta-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
     }
 
-    .section-title {
+    .meta-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 12px;
+    }
+
+    .meta-label {
+      color: var(--muted);
+    }
+
+    section {
+      padding: 0 0 24px;
+    }
+
+    .section-block {
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .section-head {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--line);
       display: flex;
       align-items: end;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 18px;
     }
 
-    .section-title h2 {
+    .section-head h2 {
       margin: 0;
-      font-size: clamp(1.4rem, 2vw, 2rem);
+      font-size: 1.15rem;
       letter-spacing: -0.03em;
     }
 
-    .section-title p {
+    .section-head p {
       margin: 0;
       color: var(--muted);
-      max-width: 52ch;
+      max-width: 56ch;
+      font-size: 0.95rem;
     }
 
-    .grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
+    .grid-3,
     .grid-4 {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      display: grid;
     }
 
-    .card {
-      padding: 22px;
-      background: rgba(19, 28, 51, 0.86);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .cell {
+      padding: 24px;
+      min-height: 180px;
+      border-right: 1px solid var(--line);
     }
 
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.05rem;
+    .grid-3 .cell:last-child,
+    .grid-4 .cell:last-child {
+      border-right: 0;
     }
 
-    .card p {
+    .cell h3 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .cell p {
       margin: 0;
       color: var(--muted);
+      font-size: 0.96rem;
     }
 
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .tag {
-      display: inline-flex;
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border);
-      color: #dbe3f0;
-      font-size: 0.9rem;
-    }
-
-    .links-grid a.card {
+    .links a {
       display: block;
-      transition: transform 0.18s ease, border-color 0.18s ease;
+      padding: 22px;
+      border-right: 1px solid var(--line);
+      min-height: 170px;
+      transition: background 0.15s ease;
     }
 
-    .links-grid a.card:hover,
-    .links-grid a.card:focus-visible {
-      transform: translateY(-2px);
-      border-color: rgba(124, 140, 255, 0.45);
+    .links a:last-child {
+      border-right: 0;
     }
 
-    .link-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 8px;
+    .links a:hover,
+    .links a:focus-visible {
+      background: var(--surface-2);
     }
 
-    .link-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      display: inline-grid;
-      place-items: center;
-      background: rgba(124, 140, 255, 0.12);
-      color: #dbe3f0;
-      font-size: 1.15rem;
-      font-weight: 700;
-    }
-
-    .muted {
+    .kicker {
+      display: block;
+      margin-bottom: 14px;
       color: var(--muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
     footer {
-      padding: 36px 0 64px;
+      padding: 8px 0 48px;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
 
     @media (max-width: 920px) {
@@ -340,19 +277,30 @@
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 48px;
+      .hero-side,
+      .cell,
+      .links a {
+        border-left: 0;
+        border-right: 0;
+        border-top: 1px solid var(--line);
       }
 
-      .hero-copy,
-      .terminal-card,
-      .card {
+      .hero-main,
+      .hero-side,
+      .section-head,
+      .cell,
+      .links a {
         padding: 20px;
       }
 
-      .section-title {
+      .section-head {
         flex-direction: column;
         align-items: start;
+      }
+
+      .meta-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
       }
     }
   </style>
@@ -363,136 +311,121 @@
       <a class="brand" href="#top">İsmet Güzelgün</a>
       <nav class="nav-links" aria-label="Primary">
         <a href="#about">About</a>
-        <a href="#work">Work</a>
+        <a href="#focus">Focus</a>
         <a href="#links">Links</a>
       </nav>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero wrap">
+  <main id="top" class="wrap">
+    <section class="hero">
       <div class="hero-grid">
-        <article class="panel hero-copy">
-          <div class="eyebrow">Software Engineer · Backend / Frontend / Data</div>
-          <h1>Building systems that survive real-world complexity.</h1>
-          <p>
-            I work across enterprise software, data-heavy backends, developer tooling, and product ideas that aim to be useful instead of noisy.
-            This site is a simple front door: who I am, what I care about, and where to find my work.
+        <div class="hero-main">
+          <span class="eyebrow">Software Engineer</span>
+          <h1>Quiet systems. Sharp interfaces. No nonsense.</h1>
+          <p class="lead">
+            I build enterprise software, internal tools, APIs, data workflows, and product experiments.
+            The work matters more than decoration, so this page keeps it simple.
           </p>
-          <div class="tag-row" aria-label="Core areas">
-            <span class="tag">C# / .NET</span>
-            <span class="tag">Angular</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Python</span>
-            <span class="tag">iOS / Swift</span>
+          <div class="actions">
+            <a class="button" href="#links">Open links</a>
+            <a class="button" href="https://github.com/ismetguzelgun" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#links">Open links</a>
-            <a class="button button-secondary" href="https://github.com/ismetguzelgun" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
-        </article>
-
-        <aside class="panel terminal-card" aria-label="Terminal preview">
-          <div class="terminal-window">
-            <div class="terminal-top">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
+        </div>
+        <aside class="hero-side">
+          <p class="quote mono">&gt; speak friend and enter</p>
+          <div class="meta-list">
+            <div class="meta-item">
+              <div class="meta-label">Stack</div>
+              <div>.NET, Angular, SQL, Python, Swift</div>
             </div>
-            <div class="terminal-body">
-              <p class="line"><span class="prompt">ismet@machine</span>:<span class="highlight">~</span>$ <span class="cmd">whoami</span></p>
-              <p class="line comment">Software engineer focused on durable systems and clean abstractions.</p>
-              <p class="line"><span class="prompt">ismet@machine</span>:<span class="highlight">~</span>$ <span class="cmd">stack</span></p>
-              <p class="line">.NET · Angular · SQL · Python · Swift</p>
-              <p class="line"><span class="prompt">ismet@machine</span>:<span class="highlight">~</span>$ <span class="cmd">mission</span></p>
-              <p class="line comment">Build things that are elegant, useful, and not embarrassing six months later.</p>
-              <p class="line"><span class="prompt">ismet@machine</span>:<span class="highlight">~</span>$ <span class="cmd">echo</span> "Speak friend and enter."</p>
+            <div class="meta-item">
+              <div class="meta-label">Focus</div>
+              <div>Architecture, workflows, developer tools, product craft</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Bias</div>
+              <div>Clarity over noise. Structure over fashion.</div>
             </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <section id="about" class="section wrap">
-      <div class="section-title">
-        <h2>About</h2>
-        <p>A compact profile page beats a decorative mess. This is enough.</p>
-      </div>
-      <div class="grid grid-3">
-        <article class="card">
-          <h3>What I build</h3>
-          <p>Enterprise applications, internal tools, approval workflows, APIs, data pipelines, and product experiments with a bias for structure and maintainability.</p>
-        </article>
-        <article class="card">
-          <h3>How I work</h3>
-          <p>I care about naming, boundaries, clarity, operability, and avoiding fake sophistication. Clean architecture matters only if it survives contact with reality.</p>
-        </article>
-        <article class="card">
-          <h3>What I like</h3>
-          <p>Precise systems, thoughtful UI, useful abstractions, keyboard-heavy workflows, and software that feels calm instead of chaotic.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="work" class="section wrap">
-      <div class="section-title">
-        <h2>Focus Areas</h2>
-        <p>The overlap between enterprise rigor and product taste is where the interesting work usually happens.</p>
-      </div>
-      <div class="grid grid-3">
-        <article class="card">
-          <h3>Application Architecture</h3>
-          <p>Designing backend and frontend structures that scale without turning into folklore-driven spaghetti.</p>
-        </article>
-        <article class="card">
-          <h3>Data and Integrations</h3>
-          <p>SQL-heavy systems, ETL flows, service integration, operational workflows, and the boring infrastructure that keeps products alive.</p>
-        </article>
-        <article class="card">
-          <h3>Product Craft</h3>
-          <p>Developer tools, iOS apps, and side projects where implementation quality and interface quality both matter.</p>
-        </article>
+    <section id="about">
+      <div class="section-block">
+        <div class="section-head">
+          <h2>About</h2>
+          <p>A straightforward profile page is enough. No gradient theater, no fake futurism.</p>
+        </div>
+        <div class="grid-3">
+          <article class="cell">
+            <h3>What I build</h3>
+            <p>Enterprise applications, approval workflows, APIs, data-heavy systems, internal platforms, and side projects that try to earn their existence.</p>
+          </article>
+          <article class="cell">
+            <h3>How I think</h3>
+            <p>Good structure is not academic decoration. It should survive deadlines, maintenance, and people touching the code six months later.</p>
+          </article>
+          <article class="cell">
+            <h3>What I value</h3>
+            <p>Clear naming, hard edges, useful abstractions, restrained UI, and software that feels composed instead of overdesigned.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="links" class="section wrap">
-      <div class="section-title">
-        <h2>Links</h2>
-        <p>The places that matter more than a bloated homepage.</p>
+    <section id="focus">
+      <div class="section-block">
+        <div class="section-head">
+          <h2>Focus</h2>
+          <p>The interesting work usually sits where enterprise rigor meets product taste.</p>
+        </div>
+        <div class="grid-3">
+          <article class="cell">
+            <h3>Application Architecture</h3>
+            <p>Backends and frontends that stay understandable as the system grows, instead of collapsing into folklore and accidental complexity.</p>
+          </article>
+          <article class="cell">
+            <h3>Data and Integrations</h3>
+            <p>SQL-heavy workflows, ETL processes, service integrations, and the operational plumbing that keeps business systems alive.</p>
+          </article>
+          <article class="cell">
+            <h3>Product Work</h3>
+            <p>Developer tools, iOS applications, and smaller products where implementation quality and interface quality both have to hold up.</p>
+          </article>
+        </div>
       </div>
-      <div class="grid grid-4 links-grid">
-        <a class="card" href="https://github.com/ismetguzelgun" target="_blank" rel="noopener noreferrer">
-          <div class="link-top">
-            <span class="link-icon">GH</span>
-            <span class="muted">GitHub</span>
-          </div>
-          <h3>Code and experiments</h3>
-          <p>Repositories, prototypes, and technical work.</p>
-        </a>
-        <a class="card" href="https://stackoverflow.com/users/4701389/ismetguzelgun" target="_blank" rel="noopener noreferrer">
-          <div class="link-top">
-            <span class="link-icon">SO</span>
-            <span class="muted">Stack Overflow</span>
-          </div>
-          <h3>Answers and history</h3>
-          <p>Older traces of how I think about technical problems.</p>
-        </a>
-        <a class="card" href="https://tr.linkedin.com/in/ismetguzelgun" target="_blank" rel="noopener noreferrer">
-          <div class="link-top">
-            <span class="link-icon">in</span>
-            <span class="muted">LinkedIn</span>
-          </div>
-          <h3>Professional profile</h3>
-          <p>The formal version of the story.</p>
-        </a>
-        <a class="card" href="https://twitter.com/ismetguzelgun" target="_blank" rel="noopener noreferrer">
-          <div class="link-top">
-            <span class="link-icon">X</span>
-            <span class="muted">X / Twitter</span>
-          </div>
-          <h3>Occasional thoughts</h3>
-          <p>Fragments, opinions, and whatever survives the filter.</p>
-        </a>
+    </section>
+
+    <section id="links">
+      <div class="section-block">
+        <div class="section-head">
+          <h2>Links</h2>
+          <p>The places that matter more than a bloated homepage.</p>
+        </div>
+        <div class="grid-4 links">
+          <a href="https://github.com/ismetguzelgun" target="_blank" rel="noopener noreferrer">
+            <span class="kicker">GitHub</span>
+            <h3>Code and experiments</h3>
+            <p>Repositories, prototypes, technical notes, and unfinished things worth keeping.</p>
+          </a>
+          <a href="https://stackoverflow.com/users/4701389/ismetguzelgun" target="_blank" rel="noopener noreferrer">
+            <span class="kicker">Stack Overflow</span>
+            <h3>Older technical traces</h3>
+            <p>Answers, habits, and fragments of how I approached problems over time.</p>
+          </a>
+          <a href="https://tr.linkedin.com/in/ismetguzelgun" target="_blank" rel="noopener noreferrer">
+            <span class="kicker">LinkedIn</span>
+            <h3>Professional profile</h3>
+            <p>The formal version, for people who prefer the official packaging.</p>
+          </a>
+          <a href="https://twitter.com/ismetguzelgun" target="_blank" rel="noopener noreferrer">
+            <span class="kicker">X / Twitter</span>
+            <h3>Occasional thoughts</h3>
+            <p>Fragments, opinions, and whatever survives the internal filter.</p>
+          </a>
+        </div>
       </div>
     </section>
   </main>
