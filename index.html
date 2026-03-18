@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="yes">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,9 +14,7 @@
       --text: #111111;
       --muted: #5f5f5a;
       --line: #ddddda;
-      --accent: #111111;
       --max: 1080px;
-      --radius: 0px;
     }
 
     * { box-sizing: border-box; }
@@ -50,14 +48,8 @@
       min-height: 68px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
       gap: 16px;
-    }
-
-    .brand {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
     }
 
     .nav-links {
@@ -137,7 +129,7 @@
       border: 1px solid var(--line);
       background: var(--surface);
       font-weight: 600;
-      transition: background 0.15s ease, color 0.15s ease;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
     }
 
     .button:hover,
@@ -174,6 +166,19 @@
 
     .meta-label {
       color: var(--muted);
+    }
+
+    .translation-note {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .translation-note strong {
+      color: var(--text);
+      font-weight: 600;
     }
 
     section {
@@ -302,13 +307,16 @@
         grid-template-columns: 1fr;
         gap: 4px;
       }
+
+      .nav-inner {
+        justify-content: flex-start;
+      }
     }
   </style>
 </head>
 <body>
   <header class="nav">
     <div class="wrap nav-inner">
-     <!-- <a class="brand" href="#top">İsmet Güzelgün</a>-->
       <nav class="nav-links" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#focus">Focus</a>
@@ -348,6 +356,7 @@
               <div>Clarity over noise. Structure over fashion.</div>
             </div>
           </div>
+          <p class="translation-note"><strong>Need another language?</strong> You can use your browser’s built-in translate feature for this page.</p>
         </aside>
       </div>
     </section>
@@ -431,7 +440,7 @@
   </main>
 
   <footer>
-    <div class="wrap">© <span id="year"></span> İsmet Güzelgün</div>
+    <div class="wrap">© <span id="year"></span></div>
   </footer>
 
   <script>
