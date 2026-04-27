@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const siteTitle = 'İsmet Güzelgün';
+const tabTitle = 'ig.dev';
+const fullTitle = title ? `${title} — ${tabTitle}` : tabTitle;
+const desc = description ?? 'Software architect building enterprise systems, developer tools, and thoughtful products.';
+const currentYear = new Date().getFullYear();
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7faf9" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17191e" media="(prefers-color-scheme: dark)" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={desc} />
+  <link rel="alternate" type="application/rss+xml" href="/rss.xml" title={siteTitle} />
+  <script is:inline>
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+  <Nav />
+  <main class="wrap">
+    <slot />
+  </main>
+  <footer>
+    <div class="wrap">
+      <span>© {currentYear}</span>
+      <span><a href="/rss.xml">RSS</a></span>
+    </div>
+  </footer>
+</body>
+</html>
