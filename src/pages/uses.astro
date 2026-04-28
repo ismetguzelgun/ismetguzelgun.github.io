@@ -1,10 +1,15 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Uses" description="The hardware and software I use day to day.">
+<BaseLayout
+  title="Uses"
+  description="The hardware and software I use day to day."
+>
   <h1>Uses</h1>
-  <p class="lede">The hardware and software I actually reach for, not an aspirational list.</p>
+  <p class="lede">
+    The hardware and software I actually reach for, not an aspirational list.
+  </p>
 
   <h2>Hardware</h2>
   <dl class="kv">
@@ -25,4 +30,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <dl class="kv">
     <dt>Languages</dt><dd>.NET, Angular, SQL, Python, Swift</dd>
   </dl>
+
+  <h2>Avoid</h2>
+  <p>Hardware I regret.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ASUS</td>
+          <td>ROG Strix X570-I</td>
+          <td
+            >The most troubled piece of hardware I've ever owned. Never again.</td
+          >
+        </tr>
+        <tr>
+          <td>NZXT</td>
+          <td>H1.v1</td>
+          <td
+            >The case design suffocates the GPU, and one of the bundled AIO
+            liquid cooler pipes broke for no reason I could trace.</td
+          >
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </BaseLayout>

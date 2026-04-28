@@ -9,7 +9,7 @@ interface Props {
 
 const { title, description } = Astro.props;
 const siteTitle = 'İsmet Güzelgün';
-const tabTitle = 'ig.dev';
+const tabTitle = '~ig';
 const fullTitle = title ? `${title} — ${tabTitle}` : tabTitle;
 const desc = description ?? 'Software architect building enterprise systems, developer tools, and thoughtful products.';
 const currentYear = new Date().getFullYear();
@@ -25,6 +25,7 @@ const currentYear = new Date().getFullYear();
   <title>{fullTitle}</title>
   <meta name="description" content={desc} />
   <link rel="alternate" type="application/rss+xml" href="/rss.xml" title={siteTitle} />
+  <link rel="sitemap" href="/sitemap-index.xml" />
   <script is:inline>
     (function () {
       const saved = localStorage.getItem('theme');

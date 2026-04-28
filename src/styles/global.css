@@ -251,6 +251,39 @@ figcaption {
 .kv dt { color: var(--muted); }
 .kv dd { margin: 0; }
 
+.table-wrap {
+  margin: 1.2em 0 1.8em;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+th, td {
+  text-align: left;
+  padding: 14px 28px 14px 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.78em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom-color: var(--text);
+  padding-bottom: 10px;
+}
+
+th:nth-child(1), td:nth-child(1),
+th:nth-child(2), td:nth-child(2) { white-space: nowrap; }
+
+td:last-child, th:last-child { padding-right: 0; }
+
 footer {
   padding: 0 0 48px;
   color: var(--muted);

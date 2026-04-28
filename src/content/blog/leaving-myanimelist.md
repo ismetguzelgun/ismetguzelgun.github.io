@@ -1,6 +1,6 @@
 ---
 title: "Leaving MyAnimeList"
-date: 2026-04-28
+date: 2026-04-29
 description: "After ten years on MAL, I migrated to AniList. The data export was the hard part."
 ---
 
